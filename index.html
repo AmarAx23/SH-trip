@@ -5,84 +5,138 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#f5f4f0">
-<title>แผนเที่ยวเซี่ยงไฮ้ 6 วัน 5 คืน ธันวาคม 2026</title>
+<meta name="theme-color" content="#1D5C82">
+<title>แผนเที่ยวเซี่ยงไฮ้ 7 วัน 6 คืน ธันวาคม 2026</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Segoe UI', 'Noto Sans Thai', sans-serif; background: #f5f4f0; color: #1a1a1a; padding: 24px 16px; }
+  :root {
+    --xmas-maroon: #1D5C82;
+    --xmas-maroon-dark: #0F3A54;
+    --xmas-red: #B0242E;
+    --xmas-red-light: #FDECEA;
+    --xmas-gold: #C79A3F;
+    --xmas-gold-light: #FBF3E1;
+    --snow: #FCFBF8;
+  }
+  body {
+    font-family: 'Segoe UI', 'Noto Sans Thai', sans-serif;
+    background:
+      radial-gradient(circle, rgba(255,255,255,0.8) 2px, transparent 2.1px) 4px 6px / 64px 64px,
+      radial-gradient(circle, rgba(255,255,255,0.65) 1.6px, transparent 1.7px) 0 0 / 48px 48px,
+      radial-gradient(circle, rgba(255,255,255,0.5) 1.2px, transparent 1.3px) 22px 26px / 36px 36px,
+      radial-gradient(circle, rgba(255,255,255,0.4) 0.9px, transparent 1px) 30px 10px / 28px 28px,
+      radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.35) 0, transparent 55%),
+      linear-gradient(180deg, #CDE8F6 0%, #8FC0DE 35%, #4B87B0 70%, #1D5C82 100%);
+    background-attachment: fixed;
+    color: #1a1a1a;
+    padding: 24px 16px;
+  }
   .container { max-width: 720px; margin: 0 auto; }
-  .trip-header { text-align: center; padding: 2rem 0 1.5rem; }
-  .badge-new { display: inline-block; background: #E8F8F0; color: #1D9E75; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; letter-spacing: 0.5px; }
-  .trip-title { font-size: 28px; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
-  .trip-sub { font-size: 14px; color: #888; }
+
+  .trip-header {
+    text-align: center;
+    padding: 1.8rem 1rem 1.6rem;
+    background: linear-gradient(160deg, var(--xmas-maroon) 0%, var(--xmas-maroon-dark) 100%);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(15,58,84,0.25);
+  }
+  .trip-header::before {
+    content: "";
+    position: absolute; top: 0; left: 0; right: 0; height: 6px;
+    background: repeating-linear-gradient(45deg, var(--xmas-red) 0 12px, var(--snow) 12px 24px);
+  }
+  .trip-header::after {
+    content: "❄ ✦ ❅ ✦ ❄ ✦ ❅ ✦ ❄ ✦ ❅ ✦ ❄";
+    position: absolute; left: 0; right: 0; bottom: 6px;
+    font-size: 11px; letter-spacing: 8px; color: rgba(255,255,255,0.15);
+    white-space: nowrap; text-align: center; overflow: hidden;
+  }
+  .badge-new { display: inline-block; background: var(--xmas-red); color: #fff; font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; letter-spacing: 0.5px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
+  .trip-title { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 6px; text-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+  .trip-sub { font-size: 14px; color: #E9D9A8; position: relative; z-index: 1; }
+
   .overview-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
-  .ov-item { background: #fff; border: 1px solid #e5e3dc; border-radius: 12px; padding: 12px; text-align: center; }
+  .ov-item { background: #fff; border: 1px solid #E6DCC2; border-top: 3px solid var(--xmas-gold); border-radius: 12px; padding: 12px; text-align: center; }
   .ov-icon { font-size: 20px; margin-bottom: 4px; }
   .ov-label { font-size: 11px; color: #888; margin-bottom: 2px; }
-  .ov-val { font-size: 13px; font-weight: 600; }
-  .day-card { background: #fff; border: 1px solid #e5e3dc; border-radius: 14px; overflow: hidden; margin-bottom: 16px; }
-  .day-header { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid #e5e3dc; }
-  .day-badge { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; flex-shrink: 0; }
+  .ov-val { font-size: 13px; font-weight: 700; color: var(--xmas-maroon); }
+
+  .day-card { background: #fff; border: 1px solid #ecebe4; border-radius: 14px; overflow: hidden; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(15,58,84,0.05); }
+  .day-header { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px dashed #e2ddc9; background: linear-gradient(90deg, var(--xmas-gold-light), #fff 60%); }
+  .day-badge { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; flex-shrink: 0; border: 2px solid #fff; box-shadow: 0 0 0 2px currentColor inset; }
   .day-info { flex: 1; }
-  .day-name { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
-  .day-date { font-size: 12px; color: #888; }
+  .day-name { font-size: 15px; font-weight: 700; margin-bottom: 2px; color: #1a1a1a; }
+  .day-date { font-size: 12px; color: #8a7a52; }
   .day-icon { font-size: 22px; }
   .events { padding: 14px 18px; display: flex; flex-direction: column; gap: 11px; }
   .event { display: flex; align-items: flex-start; gap: 10px; }
-  .event-time { font-size: 12px; color: #999; min-width: 50px; padding-top: 2px; }
+  .event-time { font-size: 12px; color: #999; min-width: 50px; padding-top: 2px; font-weight: 600; }
   .event-dot { width: 9px; height: 9px; border-radius: 50%; margin-top: 4px; flex-shrink: 0; }
   .event-content { flex: 1; }
-  .event-name { font-size: 14px; font-weight: 500; margin-bottom: 2px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .event-name { font-size: 14px; font-weight: 600; margin-bottom: 2px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
   .event-note { font-size: 12px; color: #888; margin-bottom: 3px; }
-  .tag-new { font-size: 10px; background: #FFF0E5; color: #C45C00; padding: 1px 6px; border-radius: 10px; font-weight: 600; white-space: nowrap; }
-  .tag-food { font-size: 10px; background: #FEF0F5; color: #B03060; padding: 1px 6px; border-radius: 10px; font-weight: 600; }
+  .tag-new { font-size: 10px; background: var(--xmas-red); color: #fff; padding: 1px 7px; border-radius: 10px; font-weight: 600; white-space: nowrap; }
+  .tag-food { font-size: 10px; background: var(--xmas-red-light); color: var(--xmas-red); padding: 1px 6px; border-radius: 10px; font-weight: 600; }
   .tag-disney { font-size: 10px; background: #EAF0FF; color: #2E5CE6; padding: 1px 6px; border-radius: 10px; font-weight: 600; white-space: nowrap; }
-  .map-link { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: #185FA5; text-decoration: none; background: #E6F1FB; padding: 2px 8px; border-radius: 20px; margin-top: 3px; }
-  .map-link:hover { background: #B5D4F4; }
-  .tip-box { margin: 4px 18px 14px; background: #fdf8ef; border-radius: 10px; padding: 10px 14px; display: flex; gap: 8px; }
-  .tip-text { font-size: 12px; color: #7a6030; }
-  .budget-section { background: #fff; border: 1px solid #e5e3dc; border-radius: 14px; padding: 18px; margin-bottom: 16px; }
-  .section-title { font-size: 15px; font-weight: 600; margin-bottom: 14px; }
+  .map-link { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: var(--xmas-maroon); text-decoration: none; background: var(--xmas-gold-light); padding: 2px 8px; border-radius: 20px; margin-top: 3px; }
+  .map-link:hover { background: #F0DFAF; }
+  .tip-box { margin: 4px 18px 14px; background: var(--xmas-gold-light); border: 1px solid #EFDFB0; border-radius: 10px; padding: 10px 14px; display: flex; gap: 8px; }
+  .tip-text { font-size: 12px; color: #7a5f1f; }
+
+  .budget-section, .tips-section, .packing-section, .flight-section {
+    background: #fff; border: 1px solid #ecebe4; border-radius: 14px; padding: 18px; margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(15,58,84,0.05);
+  }
+  .packing-section { margin-bottom: 2rem; }
+  .section-title { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--xmas-maroon); }
   .budget-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  .budget-item { background: #f5f4f0; border-radius: 10px; padding: 12px; text-align: center; }
-  .budget-label { font-size: 11px; color: #888; margin-bottom: 4px; }
-  .budget-amount { font-size: 14px; font-weight: 600; }
-  .budget-total { margin-top: 12px; padding-top: 12px; border-top: 1px solid #e5e3dc; display: flex; justify-content: space-between; align-items: center; }
+  .budget-item { background: var(--xmas-gold-light); border-radius: 10px; padding: 12px; text-align: center; }
+  .budget-label { font-size: 11px; color: #8a7a52; margin-bottom: 4px; }
+  .budget-amount { font-size: 14px; font-weight: 700; color: #1a1a1a; }
+  .budget-total { margin-top: 12px; padding-top: 12px; border-top: 2px dashed var(--xmas-gold); display: flex; justify-content: space-between; align-items: center; }
   .budget-total-label { font-size: 13px; color: #666; }
-  .budget-total-amount { font-size: 20px; font-weight: 700; }
-  .tips-section { background: #fff; border: 1px solid #e5e3dc; border-radius: 14px; padding: 18px; margin-bottom: 16px; }
+  .budget-total-amount { font-size: 20px; font-weight: 800; color: var(--xmas-red); }
+
   .tips-grid { display: flex; flex-direction: column; gap: 8px; }
   .tip-row { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #444; }
   .tip-row span:first-child { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
-  .packing-section { background: #fff; border: 1px solid #e5e3dc; border-radius: 14px; padding: 18px; margin-bottom: 2rem; }
   .packing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
   .packing-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #555; }
-  .flight-section { background: #fff; border: 1px solid #e5e3dc; border-radius: 14px; padding: 18px; margin-bottom: 16px; }
+
   .flight-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 0; }
-  .flight-row + .flight-row { border-top: 1px dashed #e5e3dc; }
-  .flight-leg-label { font-size: 11px; font-weight: 600; color: #C45C00; background: #FFF0E5; padding: 2px 8px; border-radius: 10px; margin-bottom: 4px; display: inline-block; }
-  .flight-route { font-size: 14px; font-weight: 600; }
+  .flight-row + .flight-row { border-top: 1px dashed #e2ddc9; }
+  .flight-leg-label { font-size: 11px; font-weight: 600; color: var(--xmas-red); background: var(--xmas-red-light); padding: 2px 8px; border-radius: 10px; margin-bottom: 4px; display: inline-block; }
+  .flight-route { font-size: 14px; font-weight: 700; color: var(--xmas-maroon); }
   .flight-meta { font-size: 12px; color: #888; margin-top: 2px; }
-  .flight-time { text-align: right; font-size: 13px; font-weight: 600; }
+  .flight-time { text-align: right; font-size: 13px; font-weight: 700; }
   .flight-time .sub { font-size: 11px; color: #888; font-weight: 400; }
+
   .d1-badge { background: #E6F1FB; color: #185FA5; }
-  .d2-badge { background: #EAF3DE; color: #3B6D11; }
-  .d3-badge { background: #FBEAF0; color: #993556; }
+  .d2-badge { background: var(--xmas-red-light); color: var(--xmas-red); }
+  .d3-badge { background: #E8F1F7; color: #2B6E8C; }
   .d4-badge { background: #EEEDFE; color: #3C3489; }
-  .d5-badge { background: #E0F5F3; color: #0E8A84; }
-  .d6-badge { background: #F2F0EC; color: #6b6b63; }
+  .d5-badge { background: var(--xmas-gold-light); color: #9C7A1F; }
+  .d6-badge { background: #E0F5F3; color: #0E8A84; }
   .dot-blue { background: #378ADD; }
-  .dot-green { background: #1D9E75; }
+  .dot-green { background: var(--xmas-maroon); }
   .dot-pink { background: #D4537E; }
   .dot-amber { background: #BA7517; }
   .dot-purple { background: #7F77DD; }
-  .dot-orange { background: #D85A30; }
+  .dot-orange { background: var(--xmas-red); }
   .dot-gray { background: #9E9B96; }
   .dot-teal { background: #0E8A84; }
+
+  footer.trip-footer { text-align: center; padding: 10px 0 4px; font-size: 12px; color: #e8f3fa; letter-spacing: 1px; }
+  .snow-row { text-align: center; font-size: 20px; letter-spacing: 22px; padding: 10px 22px; color: rgba(255,255,255,0.85); text-shadow: 0 2px 4px rgba(15,58,84,0.3); }
+  .snow-row.small { font-size: 14px; letter-spacing: 26px; color: rgba(255,255,255,0.6); padding: 6px 22px; }
+
   /* ── Mobile tweaks ───────────────────────────── */
   @media (max-width: 480px) {
     body { padding: 14px 10px; }
-    .trip-header { padding: 1rem 0 1rem; }
+    .trip-header { padding: 1.4rem 0.8rem 1.3rem; }
     .trip-title { font-size: 22px; }
     .trip-sub { font-size: 12.5px; padding: 0 6px; }
     .overview-strip { grid-template-columns: repeat(2, 1fr); gap: 8px; }
@@ -117,15 +171,16 @@
 </head>
 <body>
 <div class="container">
+  <div class="snow-row">❆ ❅ ❄ ❅ ❆</div>
   <div class="trip-header">
-    <div class="badge-new">✦ อัปเดต ธันวาคม 2026</div>
-    <div class="trip-title">🏙️ เซี่ยงไฮ้ 6 วัน 5 คืน</div>
-    <div class="trip-sub">4–10 ธ.ค. 2026 · ไฟคริสต์มาส The Bund 🎄 · Disneyland · อากาศหนาวสบาย</div>
+    <div class="badge-new">🎄 อัปเดต ธันวาคม 2026</div>
+    <div class="trip-title">🎅 เซี่ยงไฮ้ 7 วัน 6 คืน</div>
+    <div class="trip-sub">4–10 ธ.ค. 2026 · ไฟคริสต์มาส The Bund 🎄 · Disneyland · อากาศหนาวสบาย ❄️</div>
   </div>
   <div class="overview-strip">
-    <div class="ov-item"><div class="ov-icon">🗓️</div><div class="ov-label">ระยะเวลา</div><div class="ov-val">6 วัน 5 คืน</div></div>
+    <div class="ov-item"><div class="ov-icon">🗓️</div><div class="ov-label">ระยะเวลา</div><div class="ov-val">7 วัน 6 คืน</div></div>
     <div class="ov-item"><div class="ov-icon">🏨</div><div class="ov-label">ที่พัก</div><div class="ov-val">Home Inn Tongqiao (Pudong)</div></div>
-    <div class="ov-item"><div class="ov-icon">💰</div><div class="ov-label">งบรวม/คน</div><div class="ov-val">~27,525 ฿</div></div>
+    <div class="ov-item"><div class="ov-icon">💰</div><div class="ov-label">งบรวม/คน</div><div class="ov-val">28,249.40 ฿</div></div>
     <div class="ov-item"><div class="ov-icon">🚇</div><div class="ov-label">เดินทาง</div><div class="ov-val">Metro + Maglev</div></div>
   </div>
 
@@ -176,8 +231,8 @@
       </div></div>
       <div class="event"><span class="event-time">~02:00</span><div class="event-dot dot-pink"></div><div class="event-content">
         <div class="event-name">เช็คอิน Home Inn Tongqiao <span class="tag-new">ที่พัก</span></div>
-        <div class="event-note">Homeinn Hotel (Shanghai Renji Hospital East Campus Tongqiao Subway Station Branch) · No. 15 Pujian Road, Pudong New Area · ใกล้สถานี Tongqiao Metro</div>
-        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Home+Inn+Tongqiao+Pujian+Road+Pudong+Shanghai" target="_blank">📍 Home Inn Tongqiao</a>
+        <div class="event-note">Homeinn Hotel (Shanghai Renji Hospital East Campus Tongqiao Subway Station Branch) · 4th Floor, No. 15 Pujian Road, Pudong New Area · เดิน 150 ม. (~3 นาที) ถึงสถานีรถไฟฟ้า Tangqiao</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=15+Pujian+Road+Pudong+New+Area+Shanghai+China" target="_blank">📍 No.15 Pujian Road</a>
       </div></div>
     </div>
     <div class="tip-box"><span>⭐</span><span class="tip-text">เครื่องลงดึก ควรพักผ่อนให้เต็มที่ วันถัดไปเริ่มทัวร์สายหน่อยได้ ไม่ต้องรีบตื่นเช้า</span></div>
@@ -188,33 +243,54 @@
     <div class="day-header">
       <div class="day-badge d2-badge">2</div>
       <div class="day-info">
-        <div class="day-name">วันที่ 2 — พักผ่อนสาย + The Bund</div>
-        <div class="day-date">5 ธ.ค. · เสาร์ · เย็น: The Bund · Nanjing Road</div>
+        <div class="day-name">วันที่ 2 — เที่ยวเบาๆ + The Bund</div>
+        <div class="day-date">5 ธ.ค. · เสาร์ · เริ่มออกเดินทาง 11:30 · เย็น: The Bund · Nanjing Road</div>
       </div>
       <div class="day-icon">🌉</div>
     </div>
     <div class="events">
-      <div class="event"><span class="event-time">สาย</span><div class="event-dot dot-gray"></div><div class="event-content">
-        <div class="event-name">ตื่นสาย พักผ่อนที่โรงแรม 😴</div>
-        <div class="event-note">ชดเชยจากที่ถึงที่พักดึก · หาข้าวเช้า/กลางวันแถวที่พัก</div>
+      <div class="event"><span class="event-time">08:00</span><div class="event-dot dot-gray"></div><div class="event-content">
+        <div class="event-name">นอนพักผ่อนต่อได้ 😴</div>
+        <div class="event-note">ชดเชยจากที่ถึงที่พักดึก · ตื่นสบายๆ ไม่ต้องรีบ</div>
+      </div></div>
+      <div class="event"><span class="event-time">11:30</span><div class="event-dot dot-teal"></div><div class="event-content">
+        <div class="event-name">ออกจากโรงแรม นั่ง Didi เข้าเมือง 🚗</div>
+        <div class="event-note">เรียกรถผ่านแอป Didi จาก Home Inn Tongqiao เข้าสู่ย่าน People's Square/Huangpu ใช้เวลา ~20-30 นาที (ตามสภาพจราจร)</div>
+        <a class="map-link" href="https://www.google.com/maps/dir/?api=1&origin=15+Pujian+Road+Pudong+New+Area+Shanghai+China&destination=506+Tianjin+Road+Huangpu+Shanghai+China&travelmode=driving" target="_blank">🧭 เส้นทาง โรงแรม → Lai Lai Xiao Long Bao</a>
+      </div></div>
+      <div class="event"><span class="event-time">12:15</span><div class="event-dot dot-amber"></div><div class="event-content">
+        <div class="event-name">🥟 Lai Lai Xiao Long Bao (莱莱小笼) <span class="tag-food">มื้อกลางวัน</span></div>
+        <div class="event-note">เสี่ยวหลงเปาไข่ปู ระดับ Michelin Bib Gourmand เปิดมากว่า 20 ปี · 506 Tianjin Road, Huangpu (ใกล้ People's Square) · คิวยาวแต่หมุนเร็ว</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Lai+Lai+Xiao+Long+Bao+506+Tianjin+Road+Huangpu+Shanghai" target="_blank">📍 Lai Lai Xiao Long Bao</a>
+      </div></div>
+      <div class="event"><span class="event-time">14:00</span><div class="event-dot dot-purple"></div><div class="event-content">
+        <div class="event-name">เดินเล่น/ช้อปปิ้งเบาๆ ☕ People's Square</div>
+        <div class="event-note">แวะคาเฟ่หรือห้างแถว People's Square พักจากอากาศหนาว ปรับตัวเบาๆ ก่อนเดินต่อ</div>
+        <a class="map-link" href="https://www.google.com/maps/dir/?api=1&origin=506+Tianjin+Road+Huangpu+Shanghai+China&destination=People%27s+Square+Shanghai+China&travelmode=walking" target="_blank">🧭 Lai Lai Xiao Long Bao → People's Square</a>
       </div></div>
       <div class="event"><span class="event-time">17:00</span><div class="event-dot dot-blue"></div><div class="event-content">
         <div class="event-name">The Bund 🌉 ชมวิวแม่น้ำหวงผู่</div>
         <div class="event-note">เดินริมน้ำชมตึกฝั่ง Lujiazui ยามค่ำ · ธันวาคมมีไฟประดับคริสต์มาสสวยเป็นพิเศษ · ฟรี</div>
         <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=The+Bund+Shanghai" target="_blank">📍 The Bund</a>
+        <a class="map-link" href="https://www.google.com/maps/dir/?api=1&origin=People%27s+Square+Shanghai+China&destination=The+Bund+Shanghai+China&travelmode=walking" target="_blank">🧭 People's Square → The Bund</a>
       </div></div>
       <div class="event"><span class="event-time">18:30</span><div class="event-dot dot-orange"></div><div class="event-content">
         <div class="event-name">Nanjing Road Pedestrian Street 🛍️</div>
         <div class="event-note">ถนนช้อปปิ้งหลัก ไฟประดับคริสต์มาสตามห้าง · เดินเชื่อมจาก The Bund ได้เลย</div>
         <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Nanjing+Road+Shanghai" target="_blank">📍 Nanjing Road</a>
+        <a class="map-link" href="https://www.google.com/maps/dir/?api=1&origin=The+Bund+Shanghai+China&destination=Nanjing+Road+Shanghai+China&travelmode=walking" target="_blank">🧭 The Bund → Nanjing Road</a>
       </div></div>
       <div class="event"><span class="event-time">19:30</span><div class="event-dot dot-pink"></div><div class="event-content">
-        <div class="event-name">🥟 มื้อเย็น เสี่ยวหลงเปาต้นตำรับ <span class="tag-food">มื้อเย็น</span></div>
-        <div class="event-note">ร้านเสี่ยวหลงเปาแถว Nanjing Road / Yu Garden</div>
+        <div class="event-name">🍲 New Sukiyaki (牛New寿喜烧) <span class="tag-new">สาขาใกล้ๆ!</span> <span class="tag-food">มื้อเย็น</span></div>
+        <div class="event-note">บุฟเฟต์สุกี้ยากี้ญี่ปุ่นชื่อดัง ขาไทยห้ามพลาด · เนื้อหลากเกรด + ซีฟู้ด + น้ำซุปหลายแบบ (สุกี้หวานญี่ปุ่น/มาล่า/ต้มยำ) · เริ่ม ~149 หยวน · สาขา People's Square อยู่ในห้าง Shanghai No.1 Department Store ชั้น 6 โซน B ตรง Nanjing Road Pedestrian Street เลย เดินจากจุดก่อนหน้าได้</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=New+Sukiyaki+Shanghai+No.1+Department+Store+Nanjing+East+Road" target="_blank">📍 New Sukiyaki (People's Square)</a>
+        <a class="map-link" href="https://www.google.com/maps/dir/?api=1&origin=Nanjing+Road+Shanghai+China&destination=Shanghai+No.1+Department+Store+Nanjing+East+Road+Shanghai+China&travelmode=walking" target="_blank">🧭 Nanjing Road → New Sukiyaki</a>
       </div></div>
     </div>
     <div class="tip-box"><span>⭐</span><span class="tip-text">ธันวาคมเซี่ยงไฮ้หนาว 4–11°C กลางคืนอาจต่ำกว่านั้น เตรียมเสื้อโค้ทกันหนาวหนา ผ้าพันคอ ถุงมือด้วยครับ</span></div>
   </div>
+
+  <div class="snow-row small">❆ ❅ ❄ ❅ ❆ ❅ ❄</div>
 
   <!-- Day 3 -->
   <div class="day-card">
@@ -280,6 +356,8 @@
       </div></div>
     </div>
   </div>
+
+  <div class="snow-row small">❄ ❆ ❅ ❄ ❆ ❅ ❄</div>
 
   <!-- Day 5 -->
   <div class="day-card">
@@ -350,22 +428,24 @@
     <div class="tip-box"><span>⭐</span><span class="tip-text">คืนสุดท้ายไม่ได้นอนที่โรงแรม เพราะต้องไปขึ้นเครื่องตี 00:15 ควรจัดกระเป๋าให้เรียบร้อยตั้งแต่เช้า</span></div>
   </div>
 
+  <div class="snow-row small">❅ ❄ ❆ ❅ ❄ ❆ ❅</div>
+
   <!-- Budget -->
   <div class="budget-section">
-    <div class="section-title">💰 งบประมาณโดยประมาณ (ต่อคน)</div>
+    <div class="section-title">💰 งบประมาณ Plan A (ต่อคน)</div>
     <div class="budget-grid">
-      <div class="budget-item"><div class="budget-label">ตั๋วเครื่องบิน</div><div class="budget-amount">13,598 ฿</div></div>
-      <div class="budget-item"><div class="budget-label">โรงแรม 5 คืน</div><div class="budget-amount">3,927 ฿</div></div>
-      <div class="budget-item"><div class="budget-label">Disneyland</div><div class="budget-amount">≈2,300 ฿</div></div>
-      <div class="budget-item"><div class="budget-label">Pearl/Shanghai Tower</div><div class="budget-amount">≈800 ฿</div></div>
-      <div class="budget-item"><div class="budget-label">Night Cruise</div><div class="budget-amount">≈500 ฿</div></div>
-      <div class="budget-item"><div class="budget-label">อาหาร 6 วัน</div><div class="budget-amount">≈3,500 ฿</div></div>
-      <div class="budget-item"><div class="budget-label">ค่าเดินทาง Metro</div><div class="budget-amount">≈500 ฿</div></div>
-      <div class="budget-item"><div class="budget-label">ช้อปปิ้ง/สำรอง</div><div class="budget-amount">≈2,400 ฿</div></div>
+      <div class="budget-item"><div class="budget-label">ตั๋วเครื่องบิน (Full Service)</div><div class="budget-amount">13,430.40 ฿</div></div>
+      <div class="budget-item"><div class="budget-label">ที่พัก 6 คืน Homeinn Hotel</div><div class="budget-amount">4,854.00 ฿</div></div>
+      <div class="budget-item"><div class="budget-label">ตั๋ว Disney+คูปอง 30 หยวน</div><div class="budget-amount">2,208.00 ฿</div></div>
+      <div class="budget-item"><div class="budget-label">ค่าเดินทางไป-กลับสนามบิน</div><div class="budget-amount">800.00 ฿</div></div>
+      <div class="budget-item"><div class="budget-label">e-SIM</div><div class="budget-amount">632.00 ฿</div></div>
+      <div class="budget-item"><div class="budget-label">ประกันการเดินทาง</div><div class="budget-amount">325.00 ฿</div></div>
+      <div class="budget-item"><div class="budget-label">ค่าเดินทางในเมือง</div><div class="budget-amount">1,000.00 ฿</div></div>
+      <div class="budget-item"><div class="budget-label">ค่าอาหาร</div><div class="budget-amount">5,000.00 ฿</div></div>
     </div>
     <div class="budget-total">
       <span class="budget-total-label">รวมทั้งหมด</span>
-      <span class="budget-total-amount">≈ 27,525 ฿</span>
+      <span class="budget-total-amount">28,249.40 ฿</span>
     </div>
   </div>
 
@@ -396,6 +476,8 @@
     </div>
   </div>
 
+  <div class="snow-row small">❄ ❅ ❆ ❄ ❅ ❆ ❄</div>
+
   <!-- Packing -->
   <div class="packing-section">
     <div class="section-title">🎒 สิ่งที่ต้องเตรียม</div>
@@ -412,6 +494,9 @@
       <div class="packing-item">👟 รองเท้าเดินสบาย (เดินเยอะ)</div>
     </div>
   </div>
+
+  <div class="snow-row">❆ ❅ ❄ ❅ ❆</div>
+  <footer class="trip-footer">🦌🛷 Merry Christmas & Happy Shanghai Trip 🎄 ❆</footer>
 </div>
 </body>
 </html>
