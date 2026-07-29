@@ -63,6 +63,32 @@
   .ov-val { font-size: 13px; font-weight: 700; color: var(--xmas-maroon); }
   .day-card { background: #fff; border: 1px solid #ecebe4; border-radius: 14px; overflow: hidden; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(15,58,84,0.05); }
   .day-header { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px dashed #e2ddc9; background: linear-gradient(90deg, var(--xmas-gold-light), #fff 60%); }
+  .day1-header {
+    background: linear-gradient(100deg, #DCEEFB 0%, #F3FAFF 55%, #fff 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .day1-header::before {
+    content: "✈️";
+    position: absolute;
+    right: 6px;
+    top: -14px;
+    font-size: 64px;
+    opacity: 0.16;
+    transform: rotate(20deg);
+    z-index: -1;
+  }
+  .day1-header::after {
+    content: "☁️ ⁘ ⁘ ⁘ ☁️ ⁘ ⁘ ⁘ ☁️";
+    position: absolute;
+    left: -8px;
+    bottom: -6px;
+    font-size: 16px;
+    letter-spacing: 6px;
+    opacity: 0.35;
+    white-space: nowrap;
+    z-index: -1;
+  }
   .day-badge { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; flex-shrink: 0; border: 2px solid #fff; box-shadow: 0 0 0 2px currentColor inset; }
   .day-info { flex: 1; }
   .day-name { font-size: 15px; font-weight: 700; margin-bottom: 2px; color: #1a1a1a; }
@@ -198,7 +224,7 @@
   </div>
   <!-- Day 1 -->
   <div class="day-card">
-    <div class="day-header">
+    <div class="day-header day1-header">
       <div class="day-badge d1-badge">1</div>
       <div class="day-info">
         <div class="day-name">วันที่ 1 — เดินทางไปเซี่ยงไฮ้</div>
@@ -265,12 +291,6 @@
         <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=The+Bund+Shanghai" target="_blank">📍 The Bund</a>
         <a class="map-link" href="https://www.google.com/maps/dir/?api=1&origin=Nanjing+Road+Shanghai+China&destination=The+Bund+Shanghai+China&travelmode=walking" target="_blank">🧭 Nanjing Road → The Bund</a>
       </div></div>
-      <div class="event"><span class="event-time">19:30</span><div class="event-dot dot-pink"></div><div class="event-content">
-        <div class="event-name">🍲 New Sukiyaki (牛New寿喜烧) <span class="tag-new">สาขาใกล้ๆ!</span> <span class="tag-food">มื้อเย็น</span></div>
-        <div class="event-note">บุฟเฟต์สุกี้ยากี้ญี่ปุ่นชื่อดัง ขาไทยห้ามพลาด · เนื้อหลากเกรด + ซีฟู้ด + น้ำซุปหลายแบบ (สุกี้หวานญี่ปุ่น/มาล่า/ต้มยำ) · เริ่ม ~149 หยวน · สาขา People's Square อยู่ในห้าง Shanghai No.1 Department Store ชั้น 6 โซน B ตรง Nanjing Road Pedestrian Street เลย</div>
-        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=New+Sukiyaki+Shanghai+No.1+Department+Store+Nanjing+East+Road" target="_blank">📍 New Sukiyaki (People's Square)</a>
-        <a class="map-link" href="https://www.google.com/maps/dir/?api=1&origin=The+Bund+Shanghai+China&destination=Shanghai+No.1+Department+Store+Nanjing+East+Road+Shanghai+China&travelmode=walking" target="_blank">🧭 The Bund → New Sukiyaki</a>
-      </div></div>
     </div>
     <div class="tip-box"><span>⭐</span><span class="tip-text">ธันวาคมเซี่ยงไฮ้หนาว 4–11°C กลางคืนอาจต่ำกว่านั้น เตรียมเสื้อโค้ทกันหนาวหนา ผ้าพันคอ ถุงมือด้วยครับ</span></div>
   </div>
@@ -281,7 +301,7 @@
       <div class="day-badge d3-badge">3</div>
       <div class="day-info">
         <div class="day-name">วันที่ 3 — เมืองเก่า + ย่านฝรั่งเศส</div>
-        <div class="day-date">6 ธ.ค. · อาทิตย์ · Canton 8 · Xintiandi · Huaihai Road · Yu Garden</div>
+        <div class="day-date">6 ธ.ค. · อาทิตย์ · Canton 8 · Xintiandi · Huaihai Road · Yu Garden · New Sukiyaki</div>
       </div>
       <div class="day-icon">🏮</div>
     </div>
@@ -306,6 +326,12 @@
         <div class="event-note">สวนจีนโบราณ 400 ปี + ศาลเจ้าเมือง · ยามค่ำมีไฟประดับสวยงาม · ช้อปของฝากย่าน Yuyuan Bazaar</div>
         <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Yu+Garden+Shanghai" target="_blank">📍 Yu Garden</a>
       </div></div>
+      <div class="event"><span class="event-time">19:30</span><div class="event-dot dot-pink"></div><div class="event-content">
+        <div class="event-name">🍲 New Sukiyaki (牛New寿喜烧) <span class="tag-new">สาขาใกล้ Yu Garden!</span> <span class="tag-food">มื้อเย็น</span></div>
+        <div class="event-note">บุฟเฟต์สุกี้ยากี้ญี่ปุ่นชื่อดัง ขาไทยห้ามพลาด · เนื้อหลากเกรด + ซีฟู้ด + น้ำซุปหลายแบบ (สุกี้หวานญี่ปุ่น/มาล่า/ต้มยำ) · เริ่ม ~149 หยวน · สาขาใกล้ Yu Garden ที่สุด เดินต่อจากจุดก่อนหน้าได้เลย</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=New+Sukiyaki+Yu+Garden+Shanghai" target="_blank">📍 New Sukiyaki (Yu Garden)</a>
+        <a class="map-link" href="https://www.google.com/maps/dir/?api=1&origin=Yu+Garden+Shanghai+China&destination=New+Sukiyaki+Yu+Garden+Shanghai+China&travelmode=walking" target="_blank">🧭 Yu Garden → New Sukiyaki</a>
+      </div></div>
     </div>
   </div>
   <!-- Day 4 -->
@@ -314,21 +340,31 @@
       <div class="day-badge d4-badge">4</div>
       <div class="day-info">
         <div class="day-name">วันที่ 4 — Lujiazui + ล่องแม่น้ำ</div>
-        <div class="day-date">7 ธ.ค. · จันทร์ · Pearl Tower · Shanghai Tower · Night Cruise</div>
+        <div class="day-date">7 ธ.ค. · จันทร์ · Grandma's Home · Wukang Road · Pearl Tower · Night Cruise</div>
       </div>
       <div class="day-icon">🌉</div>
     </div>
     <div class="events">
-      <div class="event"><span class="event-time">09:30</span><div class="event-dot dot-pink"></div><div class="event-content">
+      <div class="event"><span class="event-time">11:00</span><div class="event-dot dot-amber"></div><div class="event-content">
+        <div class="event-name">🥘 Grandma's Home (奶奶家) <span class="tag-food">มื้อกลางวัน</span></div>
+        <div class="event-note">ร้านอาหารเซี่ยงไฮ้ชื่อดัง สาขา Wukang Road</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Grandma%27s+Home+Wukang+Road+Shanghai" target="_blank">📍 Grandma's Home (Wukang Rd)</a>
+      </div></div>
+      <div class="event"><span class="event-time">12:30</span><div class="event-dot dot-purple"></div><div class="event-content">
+        <div class="event-name">เดินเล่น Wukang Road 🌳</div>
+        <div class="event-note">ตึกยุโรปเก่า ถนนต้นไม้ร่มรื่น คาเฟ่ถ่ายรูปสวย</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Wukang+Road+Shanghai" target="_blank">📍 Wukang Road</a>
+      </div></div>
+      <div class="event"><span class="event-time">14:00</span><div class="event-dot dot-pink"></div><div class="event-content">
         <div class="event-name">Oriental Pearl Tower หรือ Shanghai Tower 🗼</div>
-        <div class="event-note">เลือกขึ้นจุดชมวิวอย่างใดอย่างหนึ่ง · Shanghai Tower สูงสุดในจีน วิวกว้างกว่า</div>
+        <div class="event-note">นั่งรถไฟฟ้าจากย่านฝรั่งเศสมา Lujiazui ~30-40 นาที · เลือกขึ้นจุดชมวิวอย่างใดอย่างหนึ่ง · Shanghai Tower สูงสุดในจีน วิวกว้างกว่า</div>
         <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Oriental+Pearl+Tower+Shanghai" target="_blank">📍 Lujiazui</a>
       </div></div>
-      <div class="event"><span class="event-time">12:00</span><div class="event-dot dot-pink"></div><div class="event-content">
+      <div class="event"><span class="event-time">16:00</span><div class="event-dot dot-pink"></div><div class="event-content">
         <div class="event-name">Shanghai History Museum 🏛️</div>
         <div class="event-note">อยู่ชั้นล่างของ Pearl Tower เล่าประวัติเมืองเซี่ยงไฮ้ ฟรีรวมกับตั๋ว Pearl Tower</div>
       </div></div>
-      <div class="event"><span class="event-time">14:00</span><div class="event-dot dot-gray"></div><div class="event-content">
+      <div class="event"><span class="event-time">17:00</span><div class="event-dot dot-gray"></div><div class="event-content">
         <div class="event-name">ช้อปปิ้ง IFC Mall / Superbrand Mall 🛍️</div>
         <div class="event-note">ห้างหรูฝั่ง Lujiazui พักดื่มกาแฟ หลบอากาศหนาว</div>
       </div></div>
